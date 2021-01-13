@@ -5,5 +5,5 @@ import dagger.hilt.android.HiltAndroidApp
 
 
 @HiltAndroidApp
-class ToDoApplication: Application() {
+class ToDoApplication : Application() {
 }

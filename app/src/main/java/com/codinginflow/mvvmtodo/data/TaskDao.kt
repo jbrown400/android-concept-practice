@@ -1,14 +1,13 @@
 package com.codinginflow.mvvmtodo.data
 
 import androidx.room.*
-import com.codinginflow.mvvmtodo.ui.tasks.SortOrder
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface TaskDao {
 
     fun getTasks(query: String, sortOrder: SortOrder, hideCompleted: Boolean): Flow<List<Task>> =
-        when(sortOrder) {
+        when (sortOrder) {
             SortOrder.BY_DATE -> getTasksSortedByDateCreated(query, hideCompleted)
             SortOrder.BY_NAME -> getTasksSortedByName(query, hideCompleted)
         }
